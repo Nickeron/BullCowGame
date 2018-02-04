@@ -38,5 +38,10 @@ private:
 	int32 myCurrentTry = 1;
 	FString myHiddenWord;
 	bool bIsGameWon = false;
+	string aIsograms[30] = { "sir", "sad", "mud", "rob", "his", "job", "harm",	"hume",
+							"gasp",	"curl", "wore",	"enjoy", "capes", "honey", "chore",
+							"posed", "surely", "inject", "tinker",	"morgue", "swamped",
+							"objects", "conflates", "equator", "debtors", "workings",
+							"cultivar", "grownups", "flatworks","fireblast" };
 };
 

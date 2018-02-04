@@ -44,10 +44,8 @@ EWordStatus FBullCowGame::checkGuessValidity(FString Guess) const {
 void FBullCowGame::Reset()
 {
 	myCurrentTry = 1;
-	constexpr int32 MAX_TRIES = 5;
-
-	const FString HIDDEN_WORD = "bal";
-	myHiddenWord = HIDDEN_WORD;
+	int RandIndex = rand() % 30; //generates a random number between 0 and 3
+	myHiddenWord = aIsograms[RandIndex];
 	bIsGameWon = false;
 }
 
