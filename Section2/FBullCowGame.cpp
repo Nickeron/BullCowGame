@@ -1,5 +1,8 @@
 #include "FBullCowGame.h"
 #include <iostream>
+#include <map>
+
+#define TMap map
 
 using int32 = int;
 using FString = string;
@@ -17,10 +20,18 @@ int32 FBullCowGame::GetHiddenWordLength() const { return myHiddenWord.length(); 
 bool FBullCowGame::isGameWon() const { return bIsGameWon; }
 
 EWordStatus FBullCowGame::checkGuessValidity(FString Guess) const {
-	for (char letter : Guess)
+	TMap<char, bool> letterSeen;
+	for (auto letter : Guess)
 	{
 		if (!isalpha(letter))
-			return NotIsogram;
+			return NotAlpha;
+		else
+		{
+			letter = tolower(letter);
+			if (letterSeen[letter])
+				return NotIsogram;
+			else letterSeen[letter] = true;
+		}
 	}
 	if (Guess.length() < GetHiddenWordLength())
 		return Shorter;

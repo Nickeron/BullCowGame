@@ -8,6 +8,7 @@ using int32 = int;
 enum EWordStatus
 {
 	OK,
+	NotAlpha,
 	NotIsogram,
 	Longer,
 	Shorter
