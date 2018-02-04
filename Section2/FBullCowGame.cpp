@@ -13,7 +13,7 @@ FBullCowGame::FBullCowGame() {
 	Reset();
 }
 
-int32 FBullCowGame::GetMaxTries() const { return myMaxTries; }
+int32 FBullCowGame::GetMaxTries() const { return lround(1.5 * GetHiddenWordLength()); }
 int32 FBullCowGame::GetCurrentTry() const { return myCurrentTry; }
 int32 FBullCowGame::GetHiddenWordLength() const { return myHiddenWord.length(); }
 
@@ -45,9 +45,8 @@ void FBullCowGame::Reset()
 {
 	myCurrentTry = 1;
 	constexpr int32 MAX_TRIES = 5;
-	myMaxTries = MAX_TRIES;
 
-	const FString HIDDEN_WORD = "kogiou";
+	const FString HIDDEN_WORD = "bal";
 	myHiddenWord = HIDDEN_WORD;
 	bIsGameWon = false;
 }

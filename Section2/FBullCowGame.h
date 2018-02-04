@@ -36,7 +36,6 @@ public:
 
 private:
 	int32 myCurrentTry = 1;
-	int32 myMaxTries = 5;
 	FString myHiddenWord;
 	bool bIsGameWon = false;
 };
