@@ -13,7 +13,7 @@ FBullCowGame::FBullCowGame() {
 	Reset();
 }
 
-int32 FBullCowGame::GetMaxTries() const { return lround(1.5 * GetHiddenWordLength()); }
+int32 FBullCowGame::GetMaxTries() const { return lround(2.5 * GetHiddenWordLength()); }
 int32 FBullCowGame::GetCurrentTry() const { return myCurrentTry; }
 int32 FBullCowGame::GetHiddenWordLength() const { return myHiddenWord.length(); }
 
